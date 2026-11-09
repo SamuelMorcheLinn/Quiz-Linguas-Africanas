@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raízes Africanas | Quiz</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><a class="logo" href="#" onclick="voltarInicio();return false;">✦ RAÍZES AFRICANAS</a><span>CONHECIMENTO • CULTURA • TECNOLOGIA</span></header>
+<main class="container">
+<section class="intro" id="intro">
+<div class="symbol">✺</div><span class="tag">DESAFIO DE CONHECIMENTO</span>
+<h1>Explore novos <span>conhecimentos.</span></h1>
+<p>Uma jornada pelas línguas africanas e pelos primeiros passos do desenvolvimento web. Aprenda, use as ajudas e conquiste seu lugar no ranking!</p>
+<div class="topics"><span>🌍 Línguas Africanas</span><span>💻 HTML</span><span>🎨 CSS</span><span>⚡ JavaScript</span></div>
+<form class="player-form" id="playerForm">
+<label for="playerName">COMO DEVEMOS TE CHAMAR?</label>
+<div class="name-row"><input id="playerName" maxlength="22" placeholder="Digite seu nome..." required><button class="start-btn" type="submit">COMEÇAR →</button></div>
+<small>Seu nome e sua melhor pontuação serão salvos neste computador.</small>
+</form>
+<button class="ranking-link" onclick="abrirRanking()">🏆 VER CLASSIFICAÇÃO</button>
+</section>
+<section class="quiz hidden" id="quiz">
+<div class="quiz-header"><div><span class="tag">SUA JORNADA</span><h2>Boa sorte, <span id="currentPlayer"></span>!</h2></div><div class="counter" id="counter">01 / 15</div></div>
+<div class="quiz-meta"><span id="questionPoints">10 PONTOS</span><span id="timer">⏱ 00:00</span></div>
+<div class="progress"><div id="progressBar"></div></div>
+<div class="question-card">
+<span class="category" id="category"></span><h2 id="question"></h2><p class="question-context" id="context"></p>
+<div class="help-tools"><button class="hint-btn" id="hintBtn" onclick="mostrarDica()">💡 Ver dica</button><button class="fifty-btn" id="fiftyBtn" onclick="usarAjuda()">✂️ Eliminar 2 opções <span>1 uso por pergunta</span></button></div>
+<div id="hint" class="hint hidden"></div><div id="options" class="options"></div><div id="feedback" class="feedback hidden"></div>
+<button id="nextBtn" class="next-btn hidden" onclick="proximaPergunta()">PRÓXIMA PERGUNTA →</button>
+</div><p class="quiz-footnote">Leia com atenção. Depois de responder, veja a explicação para aprender algo novo.</p>
+</section>
+<section id="result" class="result hidden">
+<div class="symbol">✺</div><span class="tag">DESAFIO CONCLUÍDO</span><h1>Você chegou ao <span>final!</span></h1>
+<div class="score-circle"><strong id="score">0/15</strong><span>ACERTOS</span></div><h2 id="resultTitle"></h2><p id="resultText"></p>
+<div class="result-stats"><div><strong id="pointsResult">0</strong><span>PONTOS</span></div><div><strong id="timeResult">00:00</strong><span>TEMPO</span></div><div><strong id="percentResult">0%</strong><span>APROVEITAMENTO</span></div></div>
+<p class="rank-message" id="rankMessage"></p>
+<div class="result-actions"><button class="start-btn" onclick="jogarNovamente()">↻ JOGAR NOVAMENTE</button><button class="secondary-btn" onclick="abrirRanking()">🏆 VER RANKING</button><button class="text-btn" onclick="voltarInicio()">VOLTAR AO INÍCIO</button></div>
+</section>
+<section id="ranking" class="ranking hidden">
+<div class="ranking-heading"><div><span class="tag">QUADRO DE HONRA</span><h1>Classificação <span>geral.</span></h1><p>Os melhores resultados registrados neste computador.</p></div><div class="trophy">🏆</div></div>
+<div id="podium" class="podium"></div>
+<div class="ranking-table-wrap"><div class="ranking-table-title"><h2>Melhores jogadores</h2><span>TOP 10</span></div><div id="rankingList"></div></div>
+<p class="storage-note">💾 O ranking fica salvo neste navegador, usando o armazenamento local.</p>
+<div class="result-actions"><button class="start-btn" onclick="voltarInicio()">VOLTAR AO INÍCIO</button><button class="text-btn" onclick="limparRanking()">LIMPAR CLASSIFICAÇÃO</button></div>
+</section>
+</main>
+<footer><p>✦ RAÍZES AFRICANAS — APRENDER É EXPLORAR ✦</p></footer>
+<script src="script.js"></script>
+</body></html>
